@@ -127,3 +127,6 @@ endforeach()
 
 enable_testing()
 add_test(NinjaTest ninja_test)
+
+install(DIRECTORY DESTINATION $ENV{REZ_BUILD_INSTALL_PATH}/bin)
+install(CODE "execute_process(COMMAND python ${CMAKE_SOURCE_DIR}/install_ninja.py)")
